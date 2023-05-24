@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../core/provider/city_provider.dart';
-import 'home_screen.dart';
 
 class SelectedCityScreen extends StatelessWidget {
   const SelectedCityScreen({super.key});

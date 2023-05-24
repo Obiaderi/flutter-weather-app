@@ -48,7 +48,7 @@ class _TabScreenState extends State<TabScreen>
         controller: _tabController,
         children: const [
           SelectedCityScreen(),
-          CitySelctionScreen(),
+          CitySelectionScreen(),
         ],
       ),
     );

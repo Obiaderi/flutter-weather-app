@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:weather_app/core/provider/city_provider.dart';
-import 'package:weather_app/core/provider/weather_provider.dart';
-import 'package:weather_app/ui/screens/splash_screen.dart';
+import 'package:weather_app/core/routes/routes.dart';
+import 'package:weather_app/locator.dart';
 
-import 'ui/screens/selected_city_bottomsheet_screen.dart';
-import 'ui/screens/tab_screen.dart';
-import 'ui/screens/home_screen.dart';
+import 'core/routes/router.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,24 +24,15 @@ class MyApp extends StatelessWidget {
     );
 
     return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(
-          create: (_) => CityProvider(),
-        ),
-        ChangeNotifierProvider(
-          create: (_) => WeatherProvider(),
-        ),
-      ],
+      providers: allProviders,
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Weather App',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          primarySwatch: Colors.deepOrange,
         ),
-        home: const SplashScreen(),
-        routes: {
-          HomeScreen.routeName: (context) => const HomeScreen(),
-        },
+        initialRoute: RoutePath.splash,
+        onGenerateRoute: AppRouter.generateRoute,
       ),
     );
   }

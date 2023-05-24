@@ -28,7 +28,7 @@ class GetStarted extends StatelessWidget {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const CitySelctionScreen()));
+                        builder: (context) => const CitySelectionScreen()));
               },
               child: Container(
                 height: 50,
